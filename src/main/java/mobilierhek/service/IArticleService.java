@@ -1,8 +1,6 @@
-package accessingdatajpa.service;
+package mobilierhek.service;
 
-import accessingdatajpa.repositories.Article;
-import accessingdatajpa.repositories.ArticleImage;
-import accessingdatajpa.repositories.Categorie;
+import mobilierhek.repositories.Article;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +8,7 @@ import java.util.Optional;
 public interface IArticleService {
 
    List<Article> findAll();
-   void addArticle(String nom, String description, String categorie, String couleur, double prix);
+   void addArticle(String nom, String description, Long categorie_id, String couleur, double prix);
    Optional<Article> FindbyId(Long id);
    List<Article> getByPrixDesc();
    List<Article> getByPrixAsc();

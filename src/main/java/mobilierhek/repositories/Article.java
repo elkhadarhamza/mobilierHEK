@@ -1,4 +1,4 @@
-package accessingdatajpa.repositories;
+package mobilierhek.repositories;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,15 +14,16 @@ public class Article {
 
     @OneToMany()
     private List<ArticleImage> images;
+
     @OneToOne
-    @JoinColumn(name = "id")
-    private String categorie;
+    private Categorie categorie;
+
     private String couleur;
     private double prix;
-    @manytoone
+
     protected Article() {}
 
-    public Article(String nom, String description, String categorie, String couleur, double prix ) {
+    public Article(String nom, String description, Categorie categorie, String couleur, double prix ) {
         this.nom = nom;
         this.description = description;
         this.categorie = categorie;
@@ -49,7 +50,7 @@ public class Article {
         this.description = description;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
 
@@ -69,7 +70,7 @@ public class Article {
         return description;
     }
 
-    public String getCategorie() {
+    public Categorie getCategorie() {
         return categorie;
     }
 

@@ -1,4 +1,4 @@
-package accessingdatajpa.repositories;
+package mobilierhek.repositories;
 
 import javax.persistence.*;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public class Panier {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private String id;
+    private Long id;
     @OneToMany()
     private List<Article> articles;
     private ModePayement modepayment;

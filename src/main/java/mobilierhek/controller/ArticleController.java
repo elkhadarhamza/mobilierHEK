@@ -1,8 +1,7 @@
-package accessingdatajpa.controller;
+package mobilierhek.controller;
 
-import accessingdatajpa.repositories.Article;
-import accessingdatajpa.service.IArticleService;
-import accessingdatajpa.service.IUtilisateurService;
+import mobilierhek.repositories.Article;
+import mobilierhek.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,10 +26,10 @@ public class ArticleController {
     @PostMapping(value = "/api/article/add")
     public void ajouterArticle(@RequestParam(value = "nom") String nom,
                                @RequestParam(value = "description") String description,
-                               @RequestParam(value = "categorie") String categorie,
+                               @RequestParam(value = "categorie_id") Long categorie_id,
                                @RequestParam(value = "couleur") String couleur,
                                @RequestParam(value = "prix") double prix) {
-        articleService.addArticle(nom, description, categorie, couleur, prix);
+        articleService.addArticle(nom, description, categorie_id, couleur, prix);
     }
 
     /*
@@ -74,8 +73,6 @@ public class ArticleController {
             return articleService.getnombreArticle();
         }
     }
-
-
 }
 
 

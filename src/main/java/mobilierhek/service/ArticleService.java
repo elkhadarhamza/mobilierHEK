@@ -1,8 +1,5 @@
-package accessingdatajpa.service;
-import accessingdatajpa.repositories.Article;
-import accessingdatajpa.repositories.ArticleImage;
-import accessingdatajpa.repositories.ArticleRepository;
-import accessingdatajpa.repositories.Categorie;
+package mobilierhek.service;
+import mobilierhek.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +12,9 @@ public class ArticleService implements IArticleService {
     @Autowired
    private ArticleRepository articleRepository ;
 
+    @Autowired
+    private CategorieRepository categorieRepository ;
+
 
 
     @Override
@@ -25,10 +25,9 @@ public class ArticleService implements IArticleService {
     }
 
     @Override
-    public void addArticle(String nom, String description , String categorie, String couleur, double prix) {
-
+    public void addArticle(String nom, String description , Long categorie_id, String couleur, double prix) {
+        Categorie categorie = categorieRepository.getById(categorie_id);
         articleRepository.save(new Article(nom, description, categorie, couleur, prix));
-
     }
 
     @Override

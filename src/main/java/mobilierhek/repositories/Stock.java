@@ -1,4 +1,4 @@
-package accessingdatajpa.repositories;
+package mobilierhek.repositories;
 
 import javax.persistence.*;
 

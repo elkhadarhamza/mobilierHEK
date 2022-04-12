@@ -1,4 +1,4 @@
-package accessingdatajpa.repositories;
+package mobilierhek.repositories;
 
 import javax.persistence.*;
 
@@ -9,7 +9,6 @@ public class Categorie {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "parent_id")
     private Categorie parent;
 
     protected Categorie() {

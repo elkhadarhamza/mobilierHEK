@@ -1,4 +1,4 @@
-package accessingdatajpa.controller;
+package mobilierhek.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
