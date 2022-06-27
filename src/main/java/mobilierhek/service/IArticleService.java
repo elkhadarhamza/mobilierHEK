@@ -1,17 +1,26 @@
 package mobilierhek.service;
 
-import mobilierhek.repositories.Article;
+import mobilierhek.repository.Categorie;
+import mobilierhek.model.entity.Produit;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IArticleService {
 
-   List<Article> findAll();
-   void addArticle(String nom, String description, Long categorie_id, String couleur, double prix);
-   Optional<Article> FindbyId(Long id);
-   List<Article> getByPrixDesc();
-   List<Article> getByPrixAsc();
-   List<Article> getArticles(String prixmin, String prixmax);
+   List<Produit> findAll();
+   void addArticle(Produit article);
+   Optional<Produit> FindbyId(Long id);
+   List<Produit> getByPrixDesc();
+   List<Produit> getByPrixAsc();
+   List<Produit> getArticles(Double prixmin, Double prixmax);
    String getnombreArticle();
+   void addCategorie(Categorie categorie);
+   void deleteArticle(Produit article);
+   void deleteCategorie(Categorie categorie);
+
+   List<Categorie> findAllCategorie();
+
+
+
 }

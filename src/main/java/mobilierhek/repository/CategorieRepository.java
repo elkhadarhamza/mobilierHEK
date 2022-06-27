@@ -1,4 +1,4 @@
-package mobilierhek.repositories;
+package mobilierhek.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
